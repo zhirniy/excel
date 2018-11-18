@@ -1,15 +1,7 @@
 Hello {{ $demo->receiver }},
-This is a demo email for testing purposes! Also, it's the HTML version.
+Your order was placed on our website.
  
-Demo object values:
- 
-Demo One: {{ $demo->demo_one }}
-Demo Two: {{ $demo->demo_two }}
- 
-Values passed by With method:
- 
-testVarOne: {{ $testVarOne }}
-testVarOne: {{ $testVarOne }}
+Your order №{{$demo->order_id}}!
  
 Thank You,
 {{ $demo->sender }}

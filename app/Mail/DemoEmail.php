@@ -38,14 +38,14 @@ class DemoEmail extends Mailable
         return $this->from('ing2758@gmail.com')
                     ->view('mails.demo')
                     ->text('mails.demo_plain')
-                    ->with(
+                   ->with(
                       [
-                            'testVarOne' => '1',
-                            'testVarTwo' => '2',
-                      ])
-                      ->attach(public_path('/images').'/demo.jpg', [
+                          //  'testVarOne' => '1',
+                          //  'testVarTwo' => '2',
+                      ]);
+                   /*   ->attach(public_path('/images').'/demo.jpg', [
                               'as' => 'demo.jpg',
                               'mime' => 'image/jpeg',
-                      ]);
+                      ]);*/
     }
 }

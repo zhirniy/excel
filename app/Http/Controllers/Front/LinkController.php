@@ -21,10 +21,9 @@ class LinkController extends Controller
     	$order =  Order::create($request->all());
     	Session::flash('download.in.the.next.request', "link2/$order->id");
       
-      $objDemo = new \stdClass();
-        $objDemo->demo_one = 'Demo One Value';
-        $objDemo->demo_two = 'Demo Two Value';
-        $objDemo->sender = 'SenderUserName';
+        $objDemo = new \stdClass();
+        $objDemo->order_id = $order->id;
+        $objDemo->sender = 'Website Excel';
         $objDemo->receiver = Auth::user()->name;
  
        Mail::to(Auth::user()->email)->send(new DemoEmail($objDemo));
@@ -48,7 +47,6 @@ class LinkController extends Controller
 				$sheet->fromArray($data);
 	        });
 		})->download('xls');
-
 	}
 	
  }

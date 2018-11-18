@@ -22,5 +22,4 @@ Route::group(['namespace' => 'Front'], function(){
    Route::post('link', 'LinkController@link'); 
    Route::get('link2/{id}', 'LinkController@link2');
 });
-Route::get('mail/send', 'MailController@send');
 
