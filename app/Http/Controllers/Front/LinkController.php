@@ -39,7 +39,7 @@ class LinkController extends Controller
     		]);
     }
    	
-
+//Method create excel file
 	public function link2($id)
     {
     	$data = order::where('id', $id)->get();

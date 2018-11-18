@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+  <!-- If session contains data for create xls file, create it -->
     @if(Session::has('download.in.the.next.request'))
          <meta http-equiv="refresh" content="5;url={{Session::get('download.in.the.next.request') }}">
     @endif
