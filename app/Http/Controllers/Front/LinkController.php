@@ -15,20 +15,22 @@ use Auth;
  
 class LinkController extends Controller
 {
-	//private static $request_;
+	//method create MSQL record and sends email;
     public function link(Request $request)
     {
-    	$order =  Order::create($request->all());
+    	//Create MSQL record
+      $order =  Order::create($request->all());
+      //Create session variable
     	Session::flash('download.in.the.next.request', "link2/$order->id");
       
+      //Create sends email
         $objDemo = new \stdClass();
         $objDemo->order_id = $order->id;
         $objDemo->sender = 'Website Excel';
         $objDemo->receiver = Auth::user()->name;
- 
-       Mail::to(Auth::user()->email)->send(new DemoEmail($objDemo));
+        Mail::to(Auth::user()->email)->send(new DemoEmail($objDemo));
       
-
+      //return thanks page
     	return view('thanks_page')->with('data', [
     		'id'=>$order->id,
     		'width'=>$order->width,

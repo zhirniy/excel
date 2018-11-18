@@ -11,15 +11,13 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 Auth::routes();
-
+//Home page is page registration
 Route::get('/', 'HomeController@index')->name('home');
+//Front controller
 Route::group(['namespace' => 'Front'], function(){
+  //Create MSQL record and send enail
    Route::post('link', 'LinkController@link'); 
+  //Create xls file
    Route::get('link2/{id}', 'LinkController@link2');
 });
-
