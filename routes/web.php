@@ -13,7 +13,8 @@
 
 Auth::routes();
 //Home page is page registration
-Route::get('/', 'HomeController@index')->name('home');
+Route::view('/', 'auth/register');
+Route::get('/home', 'HomeController@index')->name('home');
 //Front controller
 Route::group(['namespace' => 'Front'], function(){
   //Create MSQL record and send enail

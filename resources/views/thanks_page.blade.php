@@ -8,7 +8,7 @@
               <p>Your width: {{$data['width']}}</p>
               <p>Your length: {{$data['length']}}</p>
               <p>Your perimeter: {{$data['perimeter']}}</p>
-              <a href="{{url('/home')}}">Сделать ещё заказ</a>
+              <a href="{{url('/')}}">Сделать ещё заказ</a>
            </div>
     </div>
 </div>
